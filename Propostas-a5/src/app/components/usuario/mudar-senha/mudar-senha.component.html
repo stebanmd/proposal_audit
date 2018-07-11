@@ -1,0 +1,45 @@
+<app-navbar [showLoader]="isLoading"></app-navbar>
+
+<div class="container">
+  <div class="row top-list">
+    <div class="col s6">
+      <h5>Mudar Senha</h5>
+    </div>
+    <div class="col s6">
+      <br>
+      <button class="btn blue-grey lighten-3 right" routerLink="/usuario">
+        <i class="material-icons left">arrow_back</i>Voltar
+      </button>
+    </div>
+  </div>
+  <hr>
+  <error-summary [errors]="erros"></error-summary>
+  <div class="row">
+    <form class="col s12" (ngSubmit)="salvar()">
+
+      <div class="row" *ngIf="showSenhaAtual">
+        <div class="input-field col s12">
+          <input id="senhaAtual" name="senhaAtual" type="password" class="validate" [(ngModel)]="model.SenhaAtual" maxlength="50" required>
+          <label for="senhaAtual" [class.active]="model.SenhaAtual">Senha Atual</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="novaSenha" name="novaSenha" type="password" class="validate" [(ngModel)]="model.NovaSenha" maxlength="50" required>
+          <label for="novaSenha" [class.active]="model.NovaSenha">Nova Senha</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="confirmaSenha" name="confirmaSenha" type="password" class="validate" [(ngModel)]="model.ConfirmaSenha" maxlength="50" required>
+          <label for="confirmaSenha" [class.active]="model.ConfirmaSenha">Confirmar Senha</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <input class="btn cyan darken-2 right" type="submit" value="Salvar">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="form-container z-depth-3">
+  <h5 class="center-align">Gerenciamento de Propostas</h5>
+  <img src="assets/images/lock.svg" id="lock">
+  <div class="container center-align" *ngIf="error">
+    <span class="red-text" >{{ error }}</span>
+  </div>
+
+  <form class="ul col s3" #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+    <div class="input-field">
+      <input type="text" [textMask]="{mask: cpfMask}" name="cpf" [(ngModel)]="cpf" required>
+      <label for="cpf">CPF</label>
+    </div>
+    <div class="input-field">
+      <input type="password" name="senha" [(ngModel)]="senha" required>
+      <label for="cpf">Senha</label>
+    </div>
+    <button type="submit" class="waves-effect waves-light btn blue right">Entrar</button>
+  </form>
+
+</div>

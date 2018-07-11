@@ -1,0 +1,46 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+	<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 p-sidebar">
+		<div ui-view="sidebar"></div>
+	</div>
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<div data-component="informacoes" ng-controller="UsuarioCtrl as ctrl" ng-init="ctrl.init()">
+			<div class="cadastro">
+				<form class="form" ng-init="ctrl.preparaMudarSenha()">
+					<div class="step step-3" data-step="3">
+						<h2 class="session top">Mudar Senha</h2>
+
+						<div class="row" ng-hide="ctrl.model.MudarSenha.UsuarioDiferente">
+							<div class="col-md-5">
+								<p class="text">Senha atual</p>
+								<input type="password" maxlength="100" class="input" ng-model="ctrl.model.MudarSenha.SenhaAtual">
+							</div>
+                        </div>
+                        
+						<div class="row">
+							<div class="col-md-5">
+								<p class="text">Nova Senha</p>
+								<input type="password" maxlength="100" class="input" ng-model="ctrl.model.MudarSenha.NovaSenha">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-5">
+								<p class="text">Confirmar Senha</p>
+								<input type="password" maxlength="100" class="input" ng-model="ctrl.model.MudarSenha.ConfirmaSenha">
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="buttons">
+				<button class="btn" ng-click="goBack()">
+					<span class="btn-text">Voltar</span>
+				</button>
+				<button class="btn btn-success" ng-click="ctrl.mudarSenha()">
+					<span class="btn-text">Continuar</span>
+				</button>
+			</div>
+		</div>
+
+	</div>
+</div>

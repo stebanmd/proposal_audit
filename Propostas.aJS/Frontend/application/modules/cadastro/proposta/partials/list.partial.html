@@ -1,0 +1,48 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 p-sidebar">
+		<div ui-view="sidebar"></div>
+	</div>
+
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-controller="PropostaCtrl as ctrl" ng-init="ctrl.init()">
+		<div class="header-list">
+			<h3>Propostas</h3>
+			<hr />
+			<div>
+				<button type="button" class="btn btn-primary" ui-sref="root.proposta-edit">Adicionar</button>
+			</div>
+			<br>
+			<div class="panel panel-default">
+				<div class="panel-body" ui-view="filtro-proposta"></div>
+			</div>
+
+		</div>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Categoria</th>
+					<th>Fornecedor</th>
+					<th>Data</th>
+					<th>Valor</th>
+					<th ng-style="{ width: (ctrl.model.Usuario.Perfil === 'AnalistaComercial') ? '180px' : '300px' }">Ação</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="entity in ctrl.lista">
+					<td>{{entity.Nome | limitTo: 50}}{{entity.Nome.length > 50 ? '...': ''}}</td>
+					<td>{{entity.Categoria.Nome | limitTo: 40}}{{entity.Categoria.Nome.length > 50 ? '...': ''}}</td>
+					<td>{{entity.Fornecedor.Nome | limitTo: 40}}{{entity.Fornecedor.Nome.length > 50 ? '...': ''}}</td>
+					<td>{{entity.Data | date: 'dd/MM/yyyy'}}</td>
+					<td>{{entity.Valor | currency: "R$"}}</td>
+					<td>
+						<a href="" class="btn btn-info btn-xs" ui-sref="root.proposta-historico({ id: entity.ID })">Histórico</a>
+						<a href="" class="btn btn-success btn-xs" ng-show="ctrl.model.Usuario.Perfil !== 'AnalistaComercial'" ng-click="ctrl.aprovar(entity)">Aprovar</a>
+						<a href="" class="btn btn-default btn-xs" ng-show="ctrl.model.Usuario.Perfil !== 'AnalistaComercial'" ng-click="ctrl.reprovar(entity)">Reprovar</a>
+						<a href="" class="btn btn-warning btn-xs" ui-sref="root.proposta-edit({ id: entity.ID })">Editar</a>
+						<a href="" class="btn btn-danger btn-xs" ng-click="ctrl.remover(entity)">Excluir</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+<div class="errors-summary" *ngIf="errors.length > 0">
+  Não foi possível concluir a operação. Por favor verifique os erros:
+  <ul>
+    <li *ngFor="let error of errors">{{error}}</li>
+  </ul>
+</div>

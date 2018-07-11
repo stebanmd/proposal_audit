@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+a {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.dataTables_length label {
+  display: none;
+}
+
+.top-list h5 {
+  margin-top: 25px;
+}
+
+.list-form {
+  margin: 20px 40px;
+}

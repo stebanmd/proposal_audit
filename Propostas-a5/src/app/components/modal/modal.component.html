@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>{{titulo}}</h2>
+<mat-dialog-content> 
+  <p>{{corpo}}</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="col s12">
+    <button *ngIf="showCancelButton" class="btn blue-grey lighten-3 col s1" mat-dialog-close>Cancelar</button>
+    <button class="btn light-blue darken-2 col s1" [mat-dialog-close]="true" cdkFocusInitial>OK</button>
+  </div>
+</mat-dialog-actions>

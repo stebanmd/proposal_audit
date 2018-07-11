@@ -1,0 +1,52 @@
+<nav>
+  <div class="nav-wrapper light-blue darken-4">
+    <a routerLink="/home" class="brand-logo">
+      <i class="material-icons">cloud</i> Propostas</a>
+    <a materialize="sideNav" data-activates="mobile-demo" class="button-collapse">
+      <i class="material-icons">menu</i>
+    </a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        <a href="" routerLink="/categoria">Categorias</a>
+      </li>
+      <li>
+        <a href="" routerLink="/fornecedor">Fornecedores</a>
+      </li>
+      <li>
+        <a href="" routerLink="/proposta">Propostas</a>
+      </li>
+      <li>
+        <a href="" routerLink="/usuario">Usuários</a>
+      </li>
+      <li>
+        <a href="#" (click)="logOff()" id="logoffLink" materialize="tooltip" data-position="left" class="tooltipped" data-tooltip="...">
+          <u>Sair</u>
+        </a>
+      </li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li>
+        <a href="/categoria" >Categorias</a>
+      </li>
+      <li>
+        <a href="/fornecedor">Fornecedores</a>
+      </li>
+      <li>
+        <a href="proposta" >Propostas</a>
+      </li>
+      <li>
+        <a href="usuario" >Usuários</a>
+      </li>
+      <li>
+        <a href="" (click)="logOff()" id="logoffLinkSide" materialize="tooltip" 
+           data-position="right" class="tooltipped" data-tooltip="...">
+          <u>Sair</u>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="progress blue darken-4" *ngIf="showLoader">
+  <div class="indeterminate orange lighten-5"></div>
+</div>

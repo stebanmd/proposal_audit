@@ -1,0 +1,45 @@
+{
+  "name": "frontend",
+  "description": "A tool for building websites",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "3.1.1",
+    "gsap": "^1.18.5",
+    "angular": "^1.6.1",
+    "angular-i18n": "^1.6.1",
+    "angular-ui-router": "^0.3.2",
+    "angular-sanitize": "^1.6.1",
+    "angular-spinner": "^0.8.1",
+    "angular-toastr": "^2.1.1",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.44",
+    "angular-file-saver": "^1.1.3",
+    "ng-file-upload": "^12.2.13",
+    "angular-ui-mask": "^1.8.7",
+    "angular-bootstrap": "^2.5.0"
+  },
+  "devDependencies": {
+    "jquery": "3.1.1",
+    "gsap": "^1.18.5",
+    "angular": "^1.6.1",
+    "angular-i18n": "^1.6.1",
+    "angular-ui-router": "^0.3.2",
+    "angular-sanitize": "^1.6.1",
+    "angular-spinner": "^0.8.1",
+    "angular-toastr": "^2.1.1",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.44",
+    "angular-file-saver": "^1.1.3",
+    "ng-file-upload": "^12.2.13",
+    "angular-ui-mask": "^1.8.7",
+    "angular-bootstrap": "^2.5.0"
+  }
+}

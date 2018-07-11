@@ -1,0 +1,661 @@
+{
+	"info": {
+		"_postman_id": "fe9480a1-cf97-4bdd-bedd-40951cf4556f",
+		"name": "Propostas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Categoria",
+			"description": null,
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "00000000000",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/categoria/listar",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"categoria",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carregar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "00000000000",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "grant_type",
+									"value": "password",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/categoria/carregar/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"categoria",
+								"carregar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Salvar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ID\": 1,\n    \"Nome\": \"Alimentos - update\",\n    \"Descricao\": \"descrição - update\",\n    \"Ativo\": true\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/categoria/salvar",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"categoria",
+								"salvar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/categoria/remover/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"categoria",
+								"remover",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Fornecedor",
+			"description": null,
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/fornecedor/listar",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"fornecedor",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carregar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/fornecedor/carregar/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"fornecedor",
+								"carregar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Salvar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Nome\": \"Novo Fornecedor\",\n    \"Documento\": \"45521588132\",\n    \"Telefone\": \"38232393902 e 2344422342\",\n    \"Email\": \"antonio@silva.com\",\n    \"Ativo\": true\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/fornecedor/salvar",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"fornecedor",
+								"salvar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/fornecedor/remover/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"fornecedor",
+								"remover",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"description": null,
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/usuario/listar",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"usuario",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Carregar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/usuario/carregar/2",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"usuario",
+								"carregar",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Salvar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Nome\": \"Eduardo Machado\",\n    \"CPF\": \"41532840330\",\n    \"DataNascimento\": \"1990-01-01T00:00:00\",\n    \"Perfil\": 1,\n    \"Senha\": \"'null'\",\n    \"Ativo\": true\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/usuario/salvar",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"usuario",
+								"salvar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/usuario/remover/2",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"usuario",
+								"remover",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mudar Senha",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"SenhaAtual\": \"\",\n\t\"NovaSenha\": \"nova_senha_para_usuario\",\n\t\"ConfirmaSenha\": \"nova_senha_para_usuario\",\n\t\"UsuarioDiferente\": true,\n\t\"IdUsuario\": 2\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/usuario/mudar-senha",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"usuario",
+								"mudar-senha"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proposta",
+			"description": null,
+			"item": [
+				{
+					"name": "Carregar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"SenhaAtual\": \"\",\n\t\"NovaSenha\": \"nova_senha_para_usuario\",\n\t\"ConfirmaSenha\": \"nova_senha_para_usuario\",\n\t\"UsuarioDiferente\": true,\n\t\"IdUsuario\": 2\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/proposta/carregar/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"proposta",
+								"carregar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Histórico",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"SenhaAtual\": \"\",\n\t\"NovaSenha\": \"nova_senha_para_usuario\",\n\t\"ConfirmaSenha\": \"nova_senha_para_usuario\",\n\t\"UsuarioDiferente\": true,\n\t\"IdUsuario\": 2\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/proposta/historico/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"proposta",
+								"historico",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"SenhaAtual\": \"\",\n\t\"NovaSenha\": \"nova_senha_para_usuario\",\n\t\"ConfirmaSenha\": \"nova_senha_para_usuario\",\n\t\"UsuarioDiferente\": true,\n\t\"IdUsuario\": 2\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/proposta/remover/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"proposta",
+								"remover",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gravar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Nome\": \"Proposta nova\",\n\t\"IdFornecedor\": 1,\n\t\"IdCategoria\": 1,\n\t\"Data\": \"1990-01-01T00:00:00\",\n\t\"Valor\": 300.20,\n\t\"Descricao\": \"...\",\n\t\"Status\": 0\n}"
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/proposta/gravar",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"proposta",
+								"gravar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "00000000000",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpoint}}/auth",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

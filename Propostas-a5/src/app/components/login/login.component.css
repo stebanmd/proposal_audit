@@ -1,0 +1,15 @@
+.form-container {
+    background:white;
+    padding:3.5em;
+    width:500px;
+    position:fixed;
+    left:50%;
+    margin-left:-250px;
+    margin-top: 2em;
+}
+
+#lock {
+    width:25%;
+    margin: 1.5em auto 3em auto;
+    display:block;
+}

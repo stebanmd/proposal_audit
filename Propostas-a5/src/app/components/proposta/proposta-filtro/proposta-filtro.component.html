@@ -1,0 +1,46 @@
+<ul class="collapsible" materialize="collapsible" data-collapsible="accordion" [materializeActions]="filterCollapse">
+  <li>
+    <div class="collapsible-header">
+      <i class="material-icons">tune</i>Filtro</div>
+    <div class="collapsible-body">
+      <div class="row">
+        <div class="col s6 input-field">
+          <input type="text" name="nomeProposta" id="nomeProposta" [(ngModel)]="filtro.NomeProposta">
+          <label for="nomeProposta">Proposta</label>
+        </div>
+        <div class="col s6 input-field">
+          <input type="text" name="nomeFornecedor" id="nomeFornecedor" [(ngModel)]="filtro.NomeFornecedor">
+          <label for="nomeFornecedor">Fornecedor</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s2 input-field active">
+          <input type="text" name="dataIni" id="dataIni" [textMask]="{mask: maskData}" [(ngModel)]="filtro.DataInicial">
+          <label for="dataIni">De</label>
+        </div>
+        <div class="col s2 input-field active">
+          <input type="text" name="dataFim" id="dataFim" [textMask]="{mask: maskData}" [(ngModel)]="filtro.DataFinal">
+          <label for="dataFim">Até</label>
+        </div>
+        <div class="col s4 input-field">
+          <select materialize="material_select" [materializeSelectOptions]="filtro.Status" id="status" [(ngModel)]="filtro.Status" name="status">
+            <option *ngFor="let status of statusProposta" [value]="status.value">{{status.description}}</option>
+          </select>
+          <label for="status">Status</label>
+        </div>
+        <div class="col s4 input-field">
+          <select materialize="material_select" [materializeSelectOptions]="categorias" id="categoria" [(ngModel)]="filtro.IdCategoria" name="categoria">
+            <option value="0">Todos</option>
+            <option *ngFor="let categoria of categorias" [value]="categoria.ID">{{categoria.Nome}}</option>
+          </select>
+          <label for="status">Status</label>
+        </div>
+      </div>
+      <div class="row">
+        <button type="button" class="btn light-blue darken-4 right" (click)="sendFilter()">
+          <i class="material-icons left">search</i>Pesquisar
+        </button>
+      </div>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,47 @@
+<app-navbar [showLoader]="isLoading"></app-navbar>
+
+<div class="list-form">
+  <div class="row top-list">
+    <div class="col s6">
+      <h5>Usuários</h5>
+    </div>
+    <div class="col s6">
+      <br>
+      <button type="button" class="btn light-blue darken-4 right" routerLink="/usuario/edit/0">
+        <i class="material-icons left">add</i>Adicionar
+      </button>
+    </div>
+  </div>
+  <hr>
+
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+      <tr>
+        <th style="width: 50px">ID</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Data Nascimento</th>
+        <th style="width: 90px">Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entity of usuarios">
+        <td>{{entity.ID}}</td>
+        <td>{{entity.Nome | slice:0:30}}{{entity.Nome.length > 30 ? '...' : ''}}</td>
+        <td>{{entity.CPFMask}}</td>
+        <td>{{entity.DataNascimento | date: 'dd/MM/yyyy'}}</td>
+        <td>
+          <a *ngIf="canChangePass" routerLink="/usuario/mudar-senha/{{entity.ID}}" materialize="tooltip" class="tooltipped" data-tooltip="Alterar Senha">
+            <i class="material-icons amber-text text-darken-3">vpn_key</i>
+          </a>
+          <a routerLink="/usuario/edit/{{entity.ID}}" materialize="tooltip" class="tooltipped" data-tooltip="Editar">
+            <i class="material-icons cyan-text text-darken-2">edit</i>
+          </a>
+          <a (click)="remover(entity)" materialize="tooltip" class="tooltipped" data-tooltip="Remover">
+            <i class="material-icons red-text text-red-2">delete</i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

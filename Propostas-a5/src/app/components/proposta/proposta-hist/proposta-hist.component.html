@@ -1,0 +1,33 @@
+<app-navbar [showLoader]="isLoading"></app-navbar>
+
+<div class="list-form">
+  <div class="row top-list">
+    <div class="col s6">
+      <h5>Histórico de Mudança</h5>
+    </div>
+    <div class="col s6">
+      <br>
+      <button type="button" class="btn blue-grey lighten-3 right" routerLink="/proposta">
+        <i class="material-icons left">arrow_back</i>Voltar
+      </button>
+    </div>
+  </div>
+  <hr>
+  <app-proposta-resumo [proposta]="proposta"></app-proposta-resumo>
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+      <tr>
+        <th>Ação</th>
+        <th>Data</th>
+        <th>Responsável</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entity of proposta.HistoricoAlteracao">
+        <td>{{entity.AcaoStr}}</td>
+        <td>{{entity.Data | date: 'dd/MM/yyyy HH:mm:ss'}}</td>
+        <td>{{entity.Usuario.Nome}} ({{entity.Usuario.PerfilStr}})</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

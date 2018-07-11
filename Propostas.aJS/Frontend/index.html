@@ -1,0 +1,40 @@
+﻿<!-- index.html -->
+
+<!DOCTYPE html>
+<html ng-app="PropostasApp" ng-controller="MainCtrl as ctrl">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Propostas</title>
+
+	<style>
+		.navbar {
+			border-radius: 0;
+		}
+
+	</style>
+
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+	<link rel="stylesheet" href="Content/css/style.min.css">
+</head>
+
+<body>
+	<!-- MAIN CONTENT -->
+	<div class="content">
+		<!-- <div class="col-lg-2 col-md-2 col-sm-3 col-xs-12 p-sidebar">
+			<div ui-view="sidebar"></div>
+		</div> -->
+		<div ui-view="main-view"></div>
+	</div>
+
+	<script src="Content/js/modernizr.js"></script>
+	<script src="Content/js/plugins.min.js"></script>
+
+	<!-- JS (load angular, ui-router, and our custom js file) -->
+	<script src="Content/js/app.min.js"></script>
+	<script src="Content/js/config.js"></script>
+</body>
+
+</html>

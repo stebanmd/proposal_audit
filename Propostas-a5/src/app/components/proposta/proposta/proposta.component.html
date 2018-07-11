@@ -1,0 +1,58 @@
+<app-navbar [showLoader]="isLoading"></app-navbar>
+
+<div class="list-form">
+  <div class="row top-list">
+    <div class="col s6">
+      <h5>Propostas</h5>
+    </div>
+    <div class="col s6">
+      <br>
+      <button type="button" class="btn light-blue darken-4 right" routerLink="/proposta/edit/0">
+        <i class="material-icons left">add</i>Adicionar
+      </button>
+    </div>
+  </div>
+  <hr>
+  <app-proposta-filtro (filterMsg)="listarPorFiltro($event)"></app-proposta-filtro>
+  <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+    <thead>
+      <tr>
+        <th style="width: 50px">ID</th>
+        <th>Nome</th>
+        <th>Categoria</th>
+        <th>Fornecedor</th>
+        <th>Data</th>
+        <th>Valor</th>
+        <th style="width: 150px">Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let entity of propostas">
+        <td>{{entity.ID}}</td>
+        <td>{{entity.Nome | slice:0:30}}{{entity.Nome.length > 30 ? '...' : ''}}</td>
+        <td>{{entity.Categoria.Nome | slice:0:30}}{{entity.Categoria.Nome.length > 30 ? '...' : ''}}</td>
+        <td>{{entity.Fornecedor.Nome | slice:0:30}}{{entity.Fornecedor.Nome.length > 30 ? '...' : ''}}</td>
+        <td>{{entity.Data | date:'dd/MM/yyyy'}}</td>
+        <td>{{entity.Valor | currency:'BRL':true}}</td>
+        
+        <td>
+          <a routerLink="/proposta/hist/{{entity.ID}}" materialize="tooltip" class="tooltipped" data-tooltip="Histórico">
+            <i class="material-icons cyan-text text-darken-2">history</i>
+          </a>
+          <a (click)="aprovar(entity)" materialize="tooltip" class="tooltipped" data-tooltip="Aprovar">
+            <i class="material-icons green-text text-darken-1">thumb_up</i>
+          </a>
+          <a (click)="reprovar(entity)" materialize="tooltip" class="tooltipped" data-tooltip="Reprovar">
+            <i class="material-icons orange-text text-darken-2">thumb_down</i>
+          </a>
+          <a routerLink="/proposta/edit/{{entity.ID}}" materialize="tooltip" class="tooltipped" data-tooltip="Editar">
+            <i class="material-icons cyan-text text-darken-2">edit</i>
+          </a>
+          <a (click)="remover(entity)" materialize="tooltip" class="tooltipped" data-tooltip="Remover">
+            <i class="material-icons red-text text-red-2">delete</i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
